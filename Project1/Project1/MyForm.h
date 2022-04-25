@@ -598,131 +598,35 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 private: System::Void comboBox5_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (comboBox5->SelectedIndex == 0) {
-		label4->Visible = true;
-		label4->Text = "Rp. 20.000";
-	}
-	else if (comboBox5->SelectedIndex == 1) {
-		label4->Visible = true;
-		label4->Text = "Rp. 40.000";
-	}
-	else if (comboBox5->SelectedIndex == 2) {
-		label4->Visible = true;
-		label4->Text = "Rp. 60.000";
-	}
-	else if (comboBox5->SelectedIndex == 3) {
-		label4->Visible = true;
-		label4->Text = "Rp. 80.000";
-	}
-	else if (comboBox5->SelectedIndex == 4) {
-		label4->Visible = true;
-		label4->Text = "Rp. 100.000";
-	}
-	else if (comboBox5->SelectedIndex == 5) {
-		label4->Visible = true;
-		label4->Text = "Rp. 120.000";
-	}
-	else if (comboBox5->SelectedIndex == 6) {
-		label4->Visible = true;
-		label4->Text = "Rp. 140.000";
-	}
-	else if (comboBox5->SelectedIndex == 7) {
-		label4->Visible = true;
-		label4->Text = "Rp. 160.000";
-	}
-	else if (comboBox5->SelectedIndex == 8) {
-		label4->Visible = true;
-		label4->Text = "Rp. 180.000";
-	}
-	else if (comboBox5->SelectedIndex == 9) {
-		label4->Visible = true;
-		label4->Text = "Rp. 200.000";
+	label4->Visible = true;
+	int i = comboBox5->SelectedIndex;
+	for (i=0; i<=9; i++) {
+		int j = comboBox5->SelectedIndex + 1;
+		int a = j * 20.000;
+		label4->Text = "Rp. "+a+".000";
 	}
 }
+
 private: System::Void comboBox6_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (comboBox6->SelectedIndex == 0) {
-		label4->Visible = true;
-		label4->Text = "Rp. 20.000";
-	}
-	else if (comboBox6->SelectedIndex == 1) {
-		label4->Visible = true;
-		label4->Text = "Rp. 40.000";
-	}
-	else if (comboBox6->SelectedIndex == 2) {
-		label4->Visible = true;
-		label4->Text = "Rp. 60.000";
-	}
-	else if (comboBox6->SelectedIndex == 3) {
-		label4->Visible = true;
-		label4->Text = "Rp. 80.000";
-	}
-	else if (comboBox6->SelectedIndex == 4) {
-		label4->Visible = true;
-		label4->Text = "Rp. 100.000";
-	}
-	else if (comboBox6->SelectedIndex == 5) {
-		label4->Visible = true;
-		label4->Text = "Rp. 120.000";
-	}
-	else if (comboBox6->SelectedIndex == 6) {
-		label4->Visible = true;
-		label4->Text = "Rp. 140.000";
-	}
-	else if (comboBox6->SelectedIndex == 7) {
-		label4->Visible = true;
-		label4->Text = "Rp. 160.000";
-	}
-	else if (comboBox6->SelectedIndex == 8) {
-		label4->Visible = true;
-		label4->Text = "Rp. 180.000";
-	}
-	else if (comboBox6->SelectedIndex == 9) {
-		label4->Visible = true;
-		label4->Text = "Rp. 200.000";
+	label4->Visible = true;
+	int i = comboBox6->SelectedIndex;
+	for (i = 0; i <= 9; i++) {
+		int j = comboBox6->SelectedIndex + 1;
+		int a = j * 20.000;
+		label4->Text = "Rp. " + a + ".000";
 	}
 }
+
 private: System::Void comboBox7_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (comboBox7->SelectedIndex == 0) {
-		label4->Visible = true;
-		label4->Text = "Rp. 20.000";
-	}
-	else if (comboBox7->SelectedIndex == 1) {
-		label4->Visible = true;
-		label4->Text = "Rp. 40.000";
-	}
-	else if (comboBox7->SelectedIndex == 2) {
-		label4->Visible = true;
-		label4->Text = "Rp. 60.000";
-	}
-	else if (comboBox7->SelectedIndex == 3) {
-		label4->Visible = true;
-		label4->Text = "Rp. 80.000";
-	}
-	else if (comboBox7->SelectedIndex == 4) {
-		label4->Visible = true;
-		label4->Text = "Rp. 100.000";
-	}
-	else if (comboBox7->SelectedIndex == 5) {
-		label4->Visible = true;
-		label4->Text = "Rp. 120.000";
-	}
-	else if (comboBox7->SelectedIndex == 6) {
-		label4->Visible = true;
-		label4->Text = "Rp. 140.000";
-	}
-	else if (comboBox7->SelectedIndex == 7) {
-		label4->Visible = true;
-		label4->Text = "Rp. 160.000";
-	}
-	else if (comboBox7->SelectedIndex == 8) {
-		label4->Visible = true;
-		label4->Text = "Rp. 180.000";
-	}
-	else if (comboBox7->SelectedIndex == 9) {
-		label4->Visible = true;
-		label4->Text = "Rp. 200.000";
+	label4->Visible = true;
+	int i = comboBox7->SelectedIndex;
+	for (i = 0; i <= 9; i++) {
+		int j = comboBox5->SelectedIndex + 1;
+		int a = j * 20.000;
+		label4->Text = "Rp. " + a + ".000";
 	}
 }
+
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (checkBox1->Checked) {
 		button1->Enabled = true;
