@@ -587,13 +587,25 @@ private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (radioButton1->Checked) {
-		MessageBox::Show("Anda berhasil memesan " + comboBox5->SelectedItem + " tiket Doctor Strange pada jam " + comboBox1->SelectedItem, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		MessageBox::Show("Anda berhasil memesan " + comboBox5->SelectedItem + " tiket Doctor Strange pada jam " + comboBox1->SelectedItem+"\nRincian pembayaran akan dikirim ke "+textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		comboBox1->Items->Clear();
+		comboBox5->Items->Clear();
+		label4->Visible = false;
 	}
 	else if (radioButton2->Checked) {
-		MessageBox::Show("Anda berhasil memesan " + comboBox6->SelectedItem + " tiket Thor pada jam " + comboBox2->SelectedItem, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		MessageBox::Show("Anda berhasil memesan " + comboBox6->SelectedItem + " tiket Thor pada jam " + comboBox2->SelectedItem + "\nRincian pembayaran akan dikirim ke " + textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		comboBox2->Items->Clear();
+		comboBox6->Items->Clear();
+		label4->Visible = false;
 	}
 	else if (radioButton3->Checked) {
-		MessageBox::Show("Anda berhasil memesan " + comboBox7->SelectedItem + " tiket Spider-Man pada jam " + comboBox3->SelectedItem, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		MessageBox::Show("Anda berhasil memesan " + comboBox7->SelectedItem + " tiket Spider-Man pada jam " + comboBox3->SelectedItem + "\nRincian pembayaran akan dikirim ke " + textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		comboBox3->Items->Clear();
+		comboBox7->Items->Clear();
+		label4->Visible = false;
+	}
+	else if (radioButton1->Checked == false || radioButton2->Checked == false || radioButton3->Checked == false) {
+		MessageBox::Show("Anda belum menentukan pilihan film", "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 
