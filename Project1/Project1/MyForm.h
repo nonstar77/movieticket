@@ -157,7 +157,7 @@ namespace Project1 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30));
-			this->label1->Location = System::Drawing::Point(16, 18);
+			this->label1->Location = System::Drawing::Point(155, 19);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(199, 46);
@@ -458,7 +458,7 @@ namespace Project1 {
 			this->label7->BackColor = System::Drawing::Color::Maroon;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
 			this->label7->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label7->Location = System::Drawing::Point(223, 27);
+			this->label7->Location = System::Drawing::Point(529, 389);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(172, 29);
@@ -485,7 +485,7 @@ namespace Project1 {
 			this->label8->BackColor = System::Drawing::Color::Maroon;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30));
 			this->label8->ForeColor = System::Drawing::Color::Maroon;
-			this->label8->Location = System::Drawing::Point(204, 18);
+			this->label8->Location = System::Drawing::Point(161, 16);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(199, 46);
@@ -628,16 +628,31 @@ namespace Project1 {
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (radioButton1->Checked) {
-			MessageBox::Show("Anda berhasil memesan " + comboBox5->SelectedItem + " tiket Doctor Strange pada jam " + comboBox1->SelectedItem + "\nRincian pembayaran akan dikirim ke " + textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			label4->Visible = false;
+			if (comboBox1->SelectedIndex < 0 || comboBox5->SelectedIndex <0) {
+				MessageBox::Show("Anda belum menentukan jam penayangan atau tiket film", "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else {
+				MessageBox::Show("Anda berhasil memesan " + comboBox5->SelectedItem + " tiket Doctor Strange pada jam " + comboBox1->SelectedItem + "\nRincian pembayaran akan dikirim ke " + textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				label4->Visible = false;
+			}
 		}
 		else if (radioButton2->Checked) {
+			if (comboBox2->SelectedIndex < 0 || comboBox6->SelectedIndex < 0) {
+				MessageBox::Show("Anda belum menentukan jam penayangan atau tiket film", "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else {
 			MessageBox::Show("Anda berhasil memesan " + comboBox6->SelectedItem + " tiket Thor pada jam " + comboBox2->SelectedItem + "\nRincian pembayaran akan dikirim ke " + textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			label4->Visible = false;
+			}
 		}
 		else if (radioButton3->Checked) {
+			if (comboBox3->SelectedIndex < 0 || comboBox7->SelectedIndex < 0) {
+				MessageBox::Show("Anda belum menentukan jam penayangan atau tiket film", "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else {
 			MessageBox::Show("Anda berhasil memesan " + comboBox7->SelectedItem + " tiket Spider-Man pada jam " + comboBox3->SelectedItem + "\nRincian pembayaran akan dikirim ke " + textBox1->Text, "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			label4->Visible = false;
+			}
 		}
 		else if (radioButton1->Checked == false || radioButton2->Checked == false || radioButton3->Checked == false) {
 			MessageBox::Show("Anda belum menentukan pilihan film", "Bioskop", MessageBoxButtons::OK, MessageBoxIcon::Error);
